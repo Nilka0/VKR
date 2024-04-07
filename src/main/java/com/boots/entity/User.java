@@ -16,6 +16,11 @@ public class User implements UserDetails {
     private Long id;
     @Size(min=5, message = "Не меньше 5 знаков")
     private String username;
+    private String first_name;
+    private String last_name;
+    private String patronymic;
+    private String phoneNumber;
+
     @Size(min=5, message = "Не меньше 5 знаков")
     private String password;
     @Transient
@@ -24,6 +29,38 @@ public class User implements UserDetails {
     private Set<Role> roles;
 
     public User() {
+    }
+
+    public String getFirst_name() {
+        return first_name;
+    }
+
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
+    }
+
+    public String getLast_name() {
+        return last_name;
+    }
+
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
+    }
+
+    public String getPatronymic() {
+        return patronymic;
+    }
+
+    public void setPatronymic(String patronymic) {
+        this.patronymic = patronymic;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public Long getId() {
