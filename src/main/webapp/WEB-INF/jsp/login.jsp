@@ -23,7 +23,7 @@
       <input name="password" type="password" placeholder="Пароль" class="large-input"/>
     </div>
     <div class="form-group">
-      <button type="submit" class="btn">Войти</button>
+      <button type="submit" class="button_primary">Войти</button>
     </div>
   </form>
 </div>

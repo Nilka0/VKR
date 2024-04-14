@@ -10,7 +10,7 @@
   <link rel="stylesheet" type="text/css" href="${contextPath}/resources/css/style.css">
 </head>
 <body>
-<div class="main-container">
+<div class="header" style="padding: 30px 0;">
   <div class="btn-container">
     <sec:authorize access="!isAuthenticated()">
       <a href="/login" class="btn">Войти</a>
