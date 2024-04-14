@@ -16,7 +16,7 @@
 <header class="header">
     <div class="header-container">
         <a class="logo-wrapper" data-testid="header--logo" style="cursor: auto;">
-            <img src="img/logo.svg" alt="">
+            <img src="<c:url value='/img/logo.svg'/>" alt="">
 
         </a>
         <nav class="navigation">
@@ -40,7 +40,7 @@
             </div>
             <div class="search-form">
                 <input class="search-input" type="text" placeholder="Я ищу...">
-                <button class="search-btn"><img src="img/lop.svg" alt=""></button>
+                <button class="search-btn"><img src="<c:url value='/img/Лупа.svg'/>" alt=""></button>
             </div>
         </nav>
         <nav class="navigation">
@@ -117,14 +117,14 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-        <div class="main-information-block" style="display: flex;flex-direction: column; flex-shrink: 0;height: 300px; justify-content: space-between; max-width: 368px;">
-            <a data-v-82a377f4="" href="/articles/chto_kupit_v_razdele_rasprodazha_7_otlichnykh_knig_na_aprel-5459" class="main-information-block__link" style=" background-image: url(img/book.png);">
+        <div class="main-information-block" style="display: flex;flex-direction: column; flex-shrink: 0;height: 400px; justify-content: space-between; max-width:400px;">
+            <a data-v-82a377f4="" href="/articles/chto_kupit_v_razdele_rasprodazha_7_otlichnykh_knig_na_aprel-5459" class="main-information-block__link" style=" background-image: url(<c:url value='/img/book.png'/>);">
                 <div data-v-82a377f4="" class="main-information-block__body">
                     <div data-v-82a377f4="" itemprop="" class="app-title app-title--mounted main-information-block__title app-title--header-4" title="Подборки литературы для тебя">
                         Подборки литературы для тебя
                     </div>
                 </div>
-            </a><a data-v-82a377f4="" href="/promotions/17119-15543" class="main-information-block__link" style=" background-image: url(img/party.png)">
+            </a><a data-v-82a377f4="" href="/promotions/17119-15543" class="main-information-block__link" style=" background-image: url(<c:url value='/img/party.png'/>)">
             <div data-v-82a377f4="" class="main-information-block__body">
                 <div data-v-82a377f4="" itemprop="" class="app-title app-title--mounted main-information-block__title app-title--header-4" title="Лучшие мероприятия и рубрики">
                     Лучшие мероприятия и рубрики
@@ -199,7 +199,7 @@
          style="visibility: visible; height: auto; width: auto; position: fixed; z-index: 999999999; letter-spacing: normal; user-select: none; right: 2%; bottom: 2%;">
         <div id="hde-contact-container-size" style="font-size: 24px;">
             <div id="hde-contact-open-btn"
-                 style="background: rgb(240, 81, 59); width: 48px; height: 48px; padding: 0.5em; line-height: 24px; text-align: center; border-radius: 50%; animation: 2s ease 0s infinite normal none running hde-contact-pulse; cursor: pointer; font-size: 1em; box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 0.5em 0px; display: flex; justify-content: center; align-items: center;">
+                 style="background: rgb(240, 81, 59); width: 54px; height: 54px; padding: 0.5em; line-height: 24px; text-align: center; border-radius: 50%; animation: 2s ease 0s infinite normal none running hde-contact-pulse; cursor: pointer; font-size: 1em; box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 0.5em 0px; display: flex; justify-content: center; align-items: center;">
                 <img src="img/help.svg" alt="иконка" width="80%" height="auto">
             </div>
             <ul id="hde-contact-list" style="list-style: none; margin: 0px; padding: 0px; top: 0px; right: 0px;">
