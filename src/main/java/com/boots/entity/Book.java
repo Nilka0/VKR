@@ -11,6 +11,7 @@ public class Book {
     private String name;
     private String genre;
     private String isbn;
+    private String path;
 
 
     @Column(length = 100000) // Указываем достаточно большую длину для base64-строки
@@ -33,6 +34,14 @@ public class Book {
 
     public Book() {
         super();
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 
     public Long getId() {

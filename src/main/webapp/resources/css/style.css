@@ -181,11 +181,40 @@ img {
     padding-left: calc(50% - 1080px / 2);
     padding-right: calc(50% - 1080px / 2);
 }
-
+.text{
+    size: 20px;
+}
+a {
+    text-decoration: none;
+    color: #6F7379;
+    font-size: 14px;
+}
+.breadcrumb-item.active {
+    color: #6F7379;
+    font-size: 14px;
+    font-weight: 600;
+}
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 0;
+    margin-bottom: 1rem;
+    list-style: none;
+    align-content: center;
+    align-items: center;}
 p {
     font-size: 16px;
 }
 h1 {
+    size: 40px;
+    font-weight: bold;
+}
+h3{
+    size: 32px;
+    font-weight: bold;
+}
+h4{
+    size: 16px;
     font-weight: bold;
 }
 body {
@@ -292,9 +321,7 @@ body {
     margin-left: 0;
     transform: translate3d(32px, -50%, 0);
 }
-.embla__button:hover {
 
-}
 .main-information-block__link[data-v-82a377f4] {
     align-items: center;
     border: 2px solid #edf3f7;
@@ -346,7 +373,7 @@ body {
 .Tab_tab__title__ZF5S4 {
     color: #ffffff;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 12px;
     font-family:  Arial, Helvetica, sans-serif;
     line-height: 12px;
     white-space: nowrap;
@@ -356,7 +383,8 @@ body {
     display: flex; /* Горизонтальное расположение элементов */
     justify-content: space-between; /* Распределение элементов по краям */
     align-items: center; /* Выравнивание по центру по вертикали */
-    max-width: 1200px; /* Максимальная ширина контейнера */
+    max-width: 1920px;
+    min-width: 1000px;/* Максимальная ширина контейнера */
     margin: 0 auto; /* Центрирование контейнера на странице */
 }
 .Tab_tab__Bkdcu:hover a.Tab_tab__link__uuF1u {
@@ -373,8 +401,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 40px;
+    padding: 0 20px;
     max-width: 1920px;
+    margin: 0 auto;
 }
 
 .logo-wrapper {
@@ -457,9 +486,8 @@ button img {
     width: 16px;
     height: 16px;
 }
-
 main {
-    padding: 20px;
+    padding: 40px;
 }
 
 .books {
@@ -515,6 +543,10 @@ main {
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
+}
+.button_second:hover{
+    background-color:#F0513B ;
+    color: #fff;
 }
 
 button:hover {
@@ -611,7 +643,7 @@ button:hover {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 180px;
+    height: 140px;
 }
 .main-information-block__link:hover .main-information-block__title[data-v-82a377f4] {
     color: #fff;
@@ -675,6 +707,7 @@ button:hover {
     display: block;
     margin-bottom: 12px;
 }
+
 .product-title__head {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -767,4 +800,168 @@ button:hover {
 .star-rating__items {
     display: flex;
     margin-right: 9px;
+}
+
+.BookCard_book__1IAPE {
+    display: flex;
+    gap: 40px;
+    grid-template-areas:
+        "preview main1 actions"
+        "preview main2 actions";
+    grid-template-columns: 274px auto 266px;
+    align-items: flex-start;
+    width: 100%;
+    padding-top: 24px;
+    border-top: 1px solid #d8d7d9;
+    flex-direction: row;
+}
+.detail-product__gallery {
+    display: flex;
+    grid-area: gallery;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 6px;
+    flex-direction: column;
+}
+.img_book_obl{
+    height: 300px;
+    width: 200px;
+
+}
+.product-info-gallery__poster {
+    cursor: pointer;
+    display: flex;
+    height: max-content;
+    justify-content: center;
+    max-height: 300px;
+    min-width: 200px;
+    user-select: none;
+}
+.block_book {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;}
+.info_book{
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+}
+.info_book_all{
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+}
+.title_block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.name_title{
+    display: flex;
+    gap: 16px;
+}
+.product-info-gallery__thumbnails {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    user-select: none;
+    margin-top: 14px;
+}
+.gallery-thumbs__item {
+    align-items: center;
+    background-color: transparent;
+    border: 0;
+    border-radius: 8px;
+    color: inherit;
+    cursor: pointer;
+    display: flex;
+    font-family: inherit;
+    height: 52px;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 52px;
+    background-color: #eaeaea;
+}
+.gallery-thumbs__item:hover{
+    background-color: #F0513B;
+}
+.gallery-thumbs__picture {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+    background-color: #eaeaea;
+}
+.gallery-thumbs__picture:hover{
+    background-color: #F0513B;
+}
+.gallery-thumbs__item:not(:disabled) {
+    cursor: pointer;
+}
+.BookCard_book__content__7J8Fc {
+    grid-area: main1;
+    box-sizing: border-box;
+    width: 100%;
+}
+.BookLabel_container__f3jDW {
+    position: relative;
+    display: flex;
+    gap: 6px;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom:14px ;
+}
+.badge {
+    color: #212529;
+    background-color: #eaeaea;
+}
+.badge {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius:100px;
+}
+
+.btn_detail {
+    display: flex;
+    gap: 12px;
+    flex-direction: row;
+}
+.rait_avt {
+    display: flex;
+    gap: 14px;
+    flex-direction: column;
+}
+.product-description-short__btn-content {
+    align-items: center;
+    display: flex;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    font-weight: 500;
+    gap: 6px;
+    line-height: 144%;
+}
+.chg-app-button__content{
+    align-items: center;
+    display: flex;
+}
+.electr_nal{
+    display: flex;
+    gap: 20px;
+}
+.info_card {
+    display: flex;
+    gap:24px;
+    flex-direction: column;
 }

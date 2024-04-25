@@ -7,6 +7,7 @@ import com.boots.service.EventService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -29,4 +30,11 @@ public class BookController {
         model.addAttribute("events", events);
         return "all";
     }
+    @GetMapping("/book-details/{id}")
+    public String getBookDetails(@PathVariable("id") Long id, Model model) {
+        Book book = bookService.getBookById(id);
+        model.addAttribute("book", book);
+        return "book_details";
+    }
+
 }
