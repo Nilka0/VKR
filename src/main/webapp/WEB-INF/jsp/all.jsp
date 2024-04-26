@@ -105,8 +105,8 @@
                 <div class="carousel-item">
                     <img src="img/card 2.jpg" class="d-block w-100" alt="Стань мастером машиностроения">
                     <div class="carousel-caption d-none d-md-block">
-                        <h1>Second slide label</h1>
-                        <p>Some representative placeholder content for the second slide.</p>
+                        <h1>Стань мастером машиностроения</h1>
+                        <p>Подборка книг о машиностроение уже тут!</p>
                         <button class="button_primary">Подробнее</button>
                     </div>
                 </div>
@@ -123,7 +123,7 @@
             </button>
         </div>
         <div class="main-information-block"
-             style="display: flex;flex-direction: column; flex-shrink: 0;height: 400px; justify-content: space-between; max-width:400px;">
+             style="display: flex;flex-direction: column; flex-shrink: 0; justify-content: space-between; max-width:400px;">
             <a data-v-82a377f4="" href="/articles/chto_kupit_v_razdele_rasprodazha_7_otlichnykh_knig_na_aprel-5459"
                class="main-information-block__link" style=" background-image: url(<c:url value='/img/book.png'/>);">
                 <div data-v-82a377f4="" class="main-information-block__body">
@@ -153,27 +153,22 @@
 
         <c:forEach var="book" items="${books}">
         <c:set var="base64Image" value="${book.imageBase64}"/>
-        <div class="embla__container" style="height: 536px; transform: translate3d(0px, 0px, 0px);">
+        <div class="embla__container" style="display: flex; width: 180px; height: 450px; flex-direction: column;">
             <div class="slider__item">
                 <picture class="product-picture">
-                    <img alt="" width="120" height="220" src="data:image/jpeg;base64,${base64Image}"
+                    <img alt="" width="160" height="220" src="data:image/jpeg;base64,${base64Image}"
                          class="product-picture__img _loaded ls-is-cached lazyloaded">
                 </picture>
-                <div class="product-card-badges product-card__badges">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                         title="Рекомендуем" svg-inline="" role="presentation" focusable="false" tabindex="-1"
-                         class="product-card-badges__icon">
-                        <path d="M0 12C0 5.373 5.373 0 12 0s12 5.373 12 12-5.373 12-12 12S0 18.627 0 12z"
-                              fill="#26A9E0"></path>
-                        <path d="M6.199 10.307h1.227c.11 0 .199.088.199.197v7.142c0 .11-.09.198-.2.198H6.2A.198.198 0 016 17.646v-7.142c0-.109.089-.197.199-.197zm3.314 7.532a.81.81 0 01-.812-.81v-6.22c0-.218.085-.424.243-.569.66-.47 1.068-.897 1.224-1.28.154-.38.21-1.096.169-2.15a.81.81 0 01.812-.81c1.041 0 1.89 1.615 1.89 2.692 0 .718-.052 1.258-.158 1.62h4.216a.81.81 0 01.811.81c.364 2.687-.356 4.748-2.161 6.183-.862.686-2.94.864-6.234.534z"
-                              fill="#fff"></path>
-                    </svg>
-                </div>
+
             </div>
             <div class="product-card__text product-card__row"><a href="/book-details/${book.id}"
                                                                  title="Мрачный Взвод. Ведьмин час" target="_self"
                                                                  class="product-card__title">
                 <div class="product-title">
+                    <div class="BookLabel_container__f3jDW" style="margin-top: 20px">
+                        <span class="badge badge">Машиностроение</span>
+                        <span class="badge badge">+2</span>
+                    </div>
                     <div class="product-title__head">
                             ${book.name}
                     </div>
@@ -233,8 +228,10 @@
                 </div>
                 </c:forEach>
             </a>
+            <div class="btn_detail">
             <button class="button_second">В корзину</button>
-            <button class="button_second"><img src="img/Icons.svg" alt="Избранное"></button>
+            <button class="button_second" style="width: 34px; height: 34px"><img src="img/Icons.svg" alt="Избранное"></button>
+            </div>
         </div>
     </div>
 
