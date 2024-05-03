@@ -55,8 +55,7 @@
             </div>
 
             <div class="Tab_tab__Bkdcu" role="tab-basket" data-testid="tab-basket" aria-label="tab-basket">
-                <a class="Tab_tab__link__uuF1u" role="tab__link" href="/my-books/cart/">
-
+                <a class="Tab_tab__link__uuF1u" role="tab__link" href="/shopping">
 
                     <div class="Tab_tab__logo__nI8HF">
                         <img src="img/корзина.svg" alt="">
@@ -79,8 +78,10 @@
                         <img src="img/prof.svg" alt="">
                     </div>
                     <p class="Tab_tab__title__ZF5S4" style="margin-bottom: 0rem;">Профиль</p>
+
                 </a>
             </div>
+
         </nav>
     </div>
 </header>
@@ -156,8 +157,7 @@
         <div class="embla__container" style="display: flex; width: 180px; height: 450px; flex-direction: column;">
             <div class="slider__item">
                 <picture class="product-picture">
-                    <img alt="" width="160" height="220" src="data:image/jpeg;base64,${base64Image}"
-                         class="product-picture__img _loaded ls-is-cached lazyloaded">
+                    <img alt="" width="160" height="220" src="data:image/jpeg;base64,${base64Image}">
                 </picture>
 
             </div>
@@ -230,7 +230,7 @@
             </a>
             <div class="btn_detail">
             <button class="button_second">В корзину</button>
-            <button class="button_second" style="width: 34px; height: 34px"><img src="img/Icons.svg" alt="Избранное"></button>
+            <button class="button_second" ><img src="img/Icons.svg" alt="Избранное"></button>
             </div>
         </div>
     </div>

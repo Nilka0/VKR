@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -17,7 +16,6 @@
     <div class="header-container">
         <a class="logo-wrapper" data-testid="header--logo" style="cursor: auto;">
             <img src="<c:url value='/img/logo.svg'/>" alt="">
-
         </a>
         <nav class="navigation">
             <div class="Tab_tab__Bkdcu" role="tab-basket" data-testid="tab-basket" aria-label="tab-basket">
@@ -52,11 +50,8 @@
                     <p class="Tab_tab__title__ZF5S4" style="margin-bottom: 0rem;">Избранное</p>
                 </a>
             </div>
-
             <div class="Tab_tab__Bkdcu" role="tab-basket" data-testid="tab-basket" aria-label="tab-basket">
-                <a class="Tab_tab__link__uuF1u" role="tab__link" href="/my-books/cart/">
-
-
+                <a class="Tab_tab__link__uuF1u" role="tab__link" href="/shopping">
                     <div class="Tab_tab__logo__nI8HF">
                         <img src="<c:url value='/img/корзина.svg'/>" alt="">
                     </div>
@@ -65,7 +60,6 @@
             </div>
             <div class="Tab_tab__Bkdcu" role="tab-myBooks" data-testid="tab-myBooks" aria-label="tab-myBooks">
                 <a class="Tab_tab__link__uuF1u" role="tab__link" href="/my-books/liked/">
-
                     <div class="Tab_tab__logo__nI8HF">
                         <img src="<c:url value='/img/Уведомление.svg'/>" alt="">
                     </div>
@@ -283,6 +277,7 @@
                 </ul>
             </div>
         </div>
+ </div>
 </main>
 
 

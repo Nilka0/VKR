@@ -36,5 +36,9 @@ public class BookController {
         model.addAttribute("book", book);
         return "book_details";
     }
+    @GetMapping("/shopping")
+    public String getBookShopping(Model model) {
+        return "shopping";
+    }
 
 }
