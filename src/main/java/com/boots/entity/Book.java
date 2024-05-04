@@ -20,7 +20,7 @@ public class Book {
     @JoinColumn(name = "author_id")
     private Author author;
     private Integer pageQuantity;
-    private Float rate;
+    private int rate;
 
 
     public Book(Long id, String name, String genre, String isbn, Author author, Integer pageQuantity) {
@@ -100,11 +100,11 @@ public class Book {
         this.pageQuantity = pageQuantity;
     }
 
-    public Float getRate() {
+    public int getRate() {
         return rate;
     }
 
-    public void setRate(Float rate) {
+    public void setRate(int rate) {
         this.rate = rate;
     }
 }

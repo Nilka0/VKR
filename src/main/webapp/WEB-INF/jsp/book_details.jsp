@@ -14,7 +14,7 @@
 <body>
 <header class="header">
     <div class="header-container">
-        <a class="logo-wrapper" data-testid="header--logo" style="cursor: auto;">
+        <a class="logo-wrapper" data-testid="header--logo" style="cursor: auto;" href="/all">
             <img src="<c:url value='/img/logo.svg'/>" alt="">
         </a>
         <nav class="navigation">
@@ -67,12 +67,20 @@
                 </a>
             </div>
             <div class="Tab_tab__Bkdcu" role="tab-login" data-testid="tab-login" aria-label="tab-login">
-                <a href="/pages/login/" class="Tab_tab__link__uuF1u" role="tab__link">
+                <a href="/pages/login/" class="Tab_tab__link__uuF1u profile-button" role="tab__link">
                     <div class="Tab_tab__logo__nI8HF">
                         <img src="<c:url value='/img/prof.svg'/>" alt="">
                     </div>
                     <p class="Tab_tab__title__ZF5S4" style="margin-bottom: 0rem;">Профиль</p>
                 </a>
+            <!-- Всплывающее меню -->
+                <div class="dropdown-content">
+                    <a href="#"><span class="icon user-icon"></span>Имя пользователя</a>
+                    <a href="#"><span class="icon settings-icon"></span>Настройки</a>
+                    <a href="#"><span class="icon books-icon"></span>Мои книги</a>
+                    <a href="#"><span class="icon orders-icon"></span>Мои заказы</a>
+                    <a href="#" style="color: red;"><span class="icon exit"></span>Выйти</a>
+                </div>
             </div>
         </nav>
     </div>
@@ -300,6 +308,26 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+<script>
+    // JavaScript для отображения всплывающего меню при наведении на кнопку "Профиль"
+    document.addEventListener("DOMContentLoaded", function() {
+        var profileButton = document.querySelector('.profile-button');
+        var profileMenu = document.querySelector('.profile-menu');
+
+        profileButton.addEventListener('mouseover', function() {
+            profileMenu.style.display = 'block';
+        });
+
+        profileButton.addEventListener('mouseout', function() {
+            profileMenu.style.display = 'none';
+        });
+
+        // Добавьте обработчик события для предотвращения скрытия меню при клике на его содержимое
+        profileMenu.addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+    });
+</script>
 </body>
 
 </html>

@@ -14,13 +14,12 @@
 <body>
 <header class="header">
     <div class="header-container">
-        <a class="logo-wrapper" data-testid="header--logo" style="cursor: auto;">
+        <a class="logo-wrapper" data-testid="header--logo" style="cursor: auto;" href="/all">
             <img src="<c:url value='/img/logo.svg'/>" alt="">
         </a>
         <nav class="navigation">
             <div class="Tab_tab__Bkdcu" role="tab-basket" data-testid="tab-basket" aria-label="tab-basket">
                 <a class="Tab_tab__link__uuF1u" role="tab__link" href="/my-books/cart/">
-
                     <div class="Tab_tab__logo__nI8HF">
                         <img src="<c:url value='/img/teacher.svg'/>" alt="">
                     </div>
@@ -67,12 +66,20 @@
                 </a>
             </div>
             <div class="Tab_tab__Bkdcu" role="tab-login" data-testid="tab-login" aria-label="tab-login">
-                <a href="/pages/login/" class="Tab_tab__link__uuF1u" role="tab__link">
+                <a href="/pages/login/" class="Tab_tab__link__uuF1u profile-button" role="tab__link">
                     <div class="Tab_tab__logo__nI8HF">
                         <img src="<c:url value='/img/prof.svg'/>" alt="">
                     </div>
                     <p class="Tab_tab__title__ZF5S4" style="margin-bottom: 0rem;">Профиль</p>
                 </a>
+                <!-- Всплывающее меню -->
+                <div class="dropdown-content">
+                    <a href="#"><span class="icon user-icon"></span>Имя пользователя</a>
+                    <a href="#"><span class="icon settings-icon"></span>Настройки</a>
+                    <a href="#"><span class="icon books-icon"></span>Мои книги</a>
+                    <a href="#"><span class="icon orders-icon"></span>Мои заказы</a>
+                    <a href="#" style="color: red;"><span class="icon exit"></span>Выйти</a>
+                </div>
             </div>
         </nav>
     </div>
