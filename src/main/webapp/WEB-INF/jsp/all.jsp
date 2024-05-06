@@ -85,7 +85,7 @@
                     <a href="#"><span class="icon settings-icon"></span>Настройки</a>
                     <a href="#"><span class="icon books-icon"></span>Мои книги</a>
                     <a href="#"><span class="icon orders-icon"></span>Мои заказы</a>
-                    <a href="#" style="color: red;"><span class="icon exit"></span>Выйти</a>
+                    <a href="/logout" style="color: red;"><span class="icon exit"></span>Выйти</a>
                 </div>
             </div>
 

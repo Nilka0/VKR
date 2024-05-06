@@ -48,15 +48,27 @@
          <h1 style="color:#242A33">Регистрация</h1>
         <form:form method="POST" modelAttribute="userForm">
            <div>
-             <form:input class="login-form input" type="text" placeholder="Номер студ.билета" autofocus="true" path="username"></form:input>
+             <form:input class="login-form-input" type="text" placeholder="Номер студ.билета" autofocus="true" path="username"></form:input>
             <form:errors path="username"></form:errors>
             ${usernameError}
            </div>
+          <div>
+            <form:input type="text" path="first_name" placeholder="Имя" class="login-form-input"></form:input>
+          </div>
+          <div>
+            <form:input type="text" path="last_name" placeholder="Фамилия" class="login-form-input"></form:input>
+          </div>
+          <div>
+            <form:input type="text" path="patronymic" placeholder="Отчество" class="login-form-input"></form:input>
+          </div>
+          <div>
+            <form:input type="tel" path="phoneNumber" placeholder="Номер телефона" class="login-form-input"></form:input>
+          </div>
            <div>
-            <form:input type="password" path="password" placeholder="Пароль" class="login-form input"></form:input>
+            <form:input type="password" path="password" placeholder="Пароль" class="login-form-input"></form:input>
            </div>
            <div>
-            <form:input type="password" path="passwordConfirm" placeholder="Повторите пароль" class="login-form input"></form:input>
+            <form:input type="password" path="passwordConfirm" placeholder="Повторите пароль" class="login-form-input"></form:input>
             <form:errors path="password"></form:errors>
             ${passwordError}
            </div>

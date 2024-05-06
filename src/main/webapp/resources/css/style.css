@@ -87,7 +87,7 @@ main {
     margin: 30px 0;
     flex-direction: column;
 }
-.login-form input{
+.login-form-input{
     outline: none;
     max-width: 500px;
     min-width: 490px;
@@ -103,7 +103,7 @@ main {
     background: #f7fafc;
     transition: 0.3s ease;
 }
-.login-form input:focus{
+.login-form-input:focus{
     background: transparent;
     border: 1px solid #101075;
 }
@@ -706,7 +706,7 @@ main {
 }
 
 .button_second_ser {
-    background-color: #F6F6F6;
+    background-color: #f1f1f1;
     color: #606060;
     border: none;
     padding: 5px 14px;
@@ -1032,6 +1032,7 @@ button:hover {
     padding-top: 24px;
     border-top: 1px solid #d8d7d9;
     flex-direction: row;
+    padding-bottom: 80px;
 }
 .detail-product__gallery {
     display: flex;
@@ -1066,6 +1067,7 @@ button:hover {
 }
 .info_book_all{
     display: flex;
+    padding-top: 60px;
     gap: 24px;
     flex-direction: column;
 }
@@ -1500,4 +1502,8 @@ button:hover {
 }
 .exit::before {
     content: url("/img/exit.svg");
+}
+.form-check-input:checked {
+    background-color: #EE3217;
+    border-color: #EE3217;
 }

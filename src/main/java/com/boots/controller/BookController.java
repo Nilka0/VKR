@@ -40,5 +40,9 @@ public class BookController {
     public String getBookShopping(Model model) {
         return "shopping";
     }
+    @GetMapping("/order")
+    public String getBookOrder(Model model) {
+        return "order";
+    }
 
 }

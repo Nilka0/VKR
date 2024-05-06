@@ -78,7 +78,7 @@
                     <a href="#"><span class="icon settings-icon"></span>Настройки</a>
                     <a href="#"><span class="icon books-icon"></span>Мои книги</a>
                     <a href="#"><span class="icon orders-icon"></span>Мои заказы</a>
-                    <a href="#" style="color: red;"><span class="icon exit"></span>Выйти</a>
+                    <a href="/logout" style="color: red;"><span class="icon exit"></span>Выйти</a>
                 </div>
             </div>
         </nav>
@@ -122,7 +122,7 @@
                         <div data-v-0175a2a0="" class="products__items">
                             <div style="display: flex;flex-direction: row;justify-content: space-between;align-items: flex-start;margin-bottom: 32px;">
                                 <h3>В наличие</h3>
-                                <button class="button_primary">Заказать все книги</button>
+                                <a href="/order"><button class="button_primary"> Заказать все книги</button></a>
                             </div>
                             <div data-v-7889c1e6="" data-v-0175a2a0="" class="cart-item">
                                 <!---->
@@ -236,12 +236,20 @@
                             </div>
                         </div>
                         <div data-v-0175a2a0="" class="products__items">
-                            <div data-v-0175a2a0="" class="availability-title"><h3>
-                                Раскупили</h3>
+                            <div style="display: flex;flex-direction: column;margin-bottom: 32px;">
+                             <div style="display: flex;flex-direction: row;align-items: center;justify-content: space-between;margin-bottom: 4px">
+                                <h3>Нет в наличие</h3>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                    <label class="form-check-label" for="flexSwitchCheckDefault" style="font-size: 14px; ">Сообщить о наличии</label>
+                                </div>
+                             </div>
                                 <div data-v-0175a2a0="" style="font-size: 14px;">
                                     Эти товары закончились. При оформлении заказа мы удалим их из корзины.
                                 </div>
                             </div>
+                            </div>
+
                             <div data-v-7889c1e6="" data-v-0175a2a0="" class="cart-item">
                                 <!---->
                                 <div data-v-7889c1e6="" class="cart-item__content">
