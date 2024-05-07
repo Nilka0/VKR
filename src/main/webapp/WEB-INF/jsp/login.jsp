@@ -50,7 +50,7 @@
         <form method="POST" action="/login">
           <input class="login-form-input" type="text" name="username" placeholder="Номер студ.билета" required autofocus="true">
           <input class="login-form-input" type="password" name="password" placeholder="Пароль" required autofocus="">
-          <button class="btn" type="submit">
+           <button class="btn" type="submit">
             Войти
           </button>
 

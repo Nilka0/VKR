@@ -249,6 +249,166 @@
 
     </div>
 
+    <section class="lazy-component" style="content-visibility: visible;">
+        <div class="main-cycle main-page__slider main-page__slider--cycle">
+            <div class="card-slider slider" style="opacity: 1;">
+                <div class="embla card-slider__carousel">
+                    <div class="title_block" style="margin-bottom: 24px;">
+                        <div class="name_title"> <h3>Объявления</h3>
+                            <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="15.8169" y="1.3335" width="23.3767" height="28.69" rx="6" transform="rotate(13.061 15.8169 1.3335)" fill="#DEA000"/>
+                                <path d="M26.3501 33.6332C25.9168 33.6332 25.4668 33.6165 24.9835 33.5665C24.1168 33.4999 23.1335 33.3332 22.1168 33.0832L19.3168 32.4165C11.6335 30.5999 9.11679 26.5332 10.9168 18.8665L12.5501 11.8832C12.9168 10.2999 13.3501 9.01653 13.8835 7.94986C16.7501 2.0332 22.2335 2.56653 26.1335 3.4832L28.9168 4.1332C32.8168 5.04986 35.2835 6.49986 36.6668 8.71653C38.0335 10.9332 38.2501 13.7832 37.3335 17.6832L35.7001 24.6499C34.2668 30.7499 31.2835 33.6332 26.3501 33.6332ZM21.8668 5.41653C19.0835 5.41653 17.3168 6.56653 16.1335 9.0332C15.7001 9.9332 15.3168 11.0499 14.9835 12.4499L13.3501 19.4332C11.8668 25.7332 13.5835 28.4832 19.8835 29.9832L22.6835 30.6499C23.5835 30.8665 24.4335 30.9999 25.2001 31.0665C29.7335 31.5165 31.9835 29.5332 33.2501 24.0832L34.8835 17.1165C35.6335 13.8999 35.5335 11.6499 34.5335 10.0332C33.5335 8.41653 31.5668 7.31653 28.3335 6.56653L25.5501 5.91653C24.1668 5.5832 22.9335 5.41653 21.8668 5.41653Z" fill="#DEA000"/>
+                                <path d="M13.8831 37.0833C9.59976 37.0833 6.86643 34.5166 5.11643 29.1L2.98309 22.5166C0.616427 15.1833 2.73309 11.05 10.0331 8.6833L12.6664 7.83329C13.5331 7.56663 14.1831 7.38329 14.7664 7.28329C15.2498 7.1833 15.7164 7.36663 15.9998 7.74996C16.2831 8.1333 16.3331 8.6333 16.1331 9.06663C15.6998 9.94996 15.3164 11.0666 14.9998 12.4666L13.3664 19.45C11.8831 25.75 13.5998 28.5 19.8998 30L22.6998 30.6666C23.5998 30.8833 24.4498 31.0166 25.2164 31.0833C25.7498 31.1333 26.1831 31.5 26.3331 32.0166C26.4664 32.5333 26.2664 33.0666 25.8331 33.3666C24.7331 34.1166 23.3498 34.75 21.5998 35.3166L18.9664 36.1833C17.0498 36.7833 15.3831 37.0833 13.8831 37.0833ZM12.9664 10.3666L10.8164 11.0666C4.86643 12.9833 3.44976 15.7833 5.36643 21.75L7.49976 28.3333C9.43309 34.2833 12.2331 35.7166 18.1831 33.8L20.8164 32.9333C20.9164 32.9 20.9998 32.8666 21.0998 32.8333L19.3331 32.4166C11.6498 30.6 9.13309 26.5333 10.9331 18.8666L12.5664 11.8833C12.6831 11.35 12.8164 10.8333 12.9664 10.3666Z" fill="#DEA000"/>
+                                <path d="M29.1498 17.5168C29.0498 17.5168 28.9498 17.5001 28.8331 17.4835L20.7498 15.4335C20.0831 15.2668 19.6831 14.5835 19.8498 13.9168C20.0165 13.2501 20.6998 12.8501 21.3665 13.0168L29.4498 15.0668C30.1165 15.2335 30.5165 15.9168 30.3498 16.5835C30.2165 17.1335 29.6998 17.5168 29.1498 17.5168Z" fill="#1818B7"/>
+                                <path d="M24.2666 23.1498C24.1666 23.1498 24.0666 23.1332 23.9499 23.1165L19.0999 21.8832C18.4332 21.7165 18.0332 21.0332 18.1999 20.3665C18.3666 19.6998 19.0499 19.2998 19.7166 19.4665L24.5666 20.6998C25.2332 20.8665 25.6332 21.5498 25.4666 22.2165C25.3332 22.7832 24.8332 23.1498 24.2666 23.1498Z" fill="#1818B7"/>
+                            </svg>
+                        </div>
+                        <a href="">Смотреть все</a>
+                    </div>
+
+                    <div class="embla__wrapper">
+                        <div class="embla__viewport">
+                            <div class="embla__container" style="height: 312px; transform: translate3d(0px, 0px, 0px);">
+                                <div class="content-card slider__item">
+                                    <div class="adaptive-poster content-card__image">
+
+                                    <div class="adaptive-poster__container">
+                                        <img src="<c:url value='/img/komp.png'/>" alt="" class="adaptive-poster__bg lazyloaded">
+                                    </div>
+                                        <div class="carousel-caption-card d-none d-md-block">
+                                            <div style="display: flex;flex-direction: column;justify-content: space-between;">
+                                                <div style="display: block;min-height: 140px;">
+                                                    <div style="font-size: 18px;padding-bottom: 8px">В нашей библиотеке пройдёт урок</div>
+                                                    <h3 style="font-size: 28px;font-weight: bold">“Твой любимый язык программирования”</h3>
+                                                </div>
+                                                <div style="display: flex;flex-direction: row;justify-content:space-between;align-items: center;">
+                                                    <div style="display: flex; gap: 8px">
+                                                        <div style="font-size: 16px;">4 мая</div>
+                                                        <div style="font-size: 16px;">15:00-19:00</div>
+                                                    </div>
+                                                    <button class="button_primary">Подать заявку</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                    <p class="content-card__description">
+                                    </p>
+                                </div>
+                                <div class="content-card slider__item">
+                                    <div class="adaptive-poster content-card__image">
+                                        <div class="adaptive-poster__container">
+                                            <img src="<c:url value='/img/bibl.png'/>" alt="" class="adaptive-poster__bg lazyloaded">
+                                        </div>
+                                        <div class="carousel-caption-card d-none d-md-block">
+                                            <div style="display: flex;flex-direction: column;justify-content: space-between;">
+                                                <div style="display: block;min-height: 140px;">
+                                                    <div style="font-size: 18px;padding-bottom: 8px">Внимание, дорогие читатели!</div>
+                                                    <h3 style="font-size: 28px;font-weight: bold">08.09.24 библиотека не работает</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="content-card__description">
+                                    </p>
+                                </div>
+                                <div class="content-card slider__item">
+                                    <div class="adaptive-poster content-card__image">
+                                        <div class="adaptive-poster__container">
+                                            <img src="<c:url value='/img/inj%20(2).png'/>" data-src="https://content.img-gorod.ru/content/web/cycles/28/2855/290_220.png" alt="" class="adaptive-poster__bg lazyloaded">
+                                        </div>
+                                        <div class="carousel-caption-card d-none d-md-block">
+                                            <div style="display: flex;flex-direction: column;justify-content: space-between;">
+                                                <div style="display: block;min-height: 140px;">
+                                                    <div style="font-size: 18px;padding-bottom: 8px">В нашей библиотеке пройдёт урок</div>
+                                                    <h3 style="font-size: 28px;font-weight: bold">“Мастерская инженера”</h3>
+                                                </div>
+                                                <div style="display: flex;flex-direction: row;justify-content:space-between;align-items: center;">
+                                                    <div style="display: flex; gap: 8px">
+                                                        <div style="font-size: 16px;">4 мая</div>
+                                                        <div style="font-size: 16px;">15:00-19:00</div>
+                                                    </div>
+                                                    <button class="button_primary">Подать заявку</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="content-card__description">
+                                    </p>
+                                </div>
+                                <div class="content-card slider__item">
+                                    <div class="adaptive-poster content-card__image">
+                                        <div class="adaptive-poster__container">
+                                        <img src="https://content.img-gorod.ru/content/web/cycles/28/2852/290_220.png" data-src="https://content.img-gorod.ru/content/web/cycles/28/2852/290_220.png" alt="" class="adaptive-poster__bg lazyloaded">
+                                        </div>
+                                        <div class="carousel-caption-card d-none d-md-block">
+                                            <div style="display: flex;flex-direction: column;justify-content: space-between;">
+                                                <div style="display: block;min-height: 140px;">
+                                                    <div style="font-size: 18px;padding-bottom: 8px">В нашей библиотеке пройдёт урок</div>
+                                                    <h3 style="font-size: 28px;font-weight: bold">“Твой любимый язык программирования”</h3>
+                                                </div>
+                                                <div style="display: flex;flex-direction: row;justify-content:space-between;align-items: center;">
+                                                    <div style="display: flex; gap: 8px">
+                                                        <div style="font-size: 16px;">4 мая</div>
+                                                        <div style="font-size: 16px;">15:00-19:00</div>
+                                                    </div>
+                                                    <button class="button_primary">Подать заявку</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="content-card__description">
+                                    </p>
+                                </div>
+                                <div class="content-card slider__item">
+                                    <div class="adaptive-poster content-card__image">
+                                        <div class="adaptive-poster__container">
+                                            <img src="https://static.chitai-gorod.ru/img/placeholder.37a9341.svg" data-src="https://content.img-gorod.ru/content/web/cycles/28/2847/290_220.png" alt="" class="adaptive-poster__bg lazyload">
+                                        </div>
+                                        <div class="carousel-caption-card d-none d-md-block">
+                                            <div style="display: flex;flex-direction: column;justify-content: space-between;">
+                                                <div style="display: block;min-height: 140px;">
+                                                    <div style="font-size: 18px;padding-bottom: 8px">В нашей библиотеке пройдёт урок</div>
+                                                    <h3 style="font-size: 28px;font-weight: bold">“Твой любимый язык программирования”</h3>
+                                                </div>
+                                                <div style="display: flex;flex-direction: row;justify-content:space-between;align-items: center;">
+                                                    <div style="display: flex; gap: 8px">
+                                                        <div style="font-size: 16px;">4 мая</div>
+                                                        <div style="font-size: 16px;">15:00-19:00</div>
+                                                    </div>
+                                                    <button class="button_primary">Подать заявку</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="/books-series/zamok-na-tret-ej-gore-2847" class="content-card__title">
+                                    Замок на третьей горе
+                                    </a> <!---->
+                                    <p class="content-card__description">
+                                    </p>
+                                </div>
+                                 <p class="content-card__description">
+                                 </p>
+                            </div>
+                        </div>
+                        <button class="embla__button embla__button--right">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="embla__button-icon">
+                                <path d="M9.293 6.293a1 1 0 000 1.414L13.586 12l-4.293 4.293a1 1 0 101.414 1.414l5-5a1 1 0 000-1.414l-5-5a1 1 0 00-1.414 0z">
+
+                                </path>
+                            </svg>
+                        </button>
+                        <button class="embla__button embla__button--left">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="embla__button-icon"><path d="M14.707 6.293a1 1 0 010 1.414L10.414 12l4.293 4.293a1 1 0 01-1.414 1.414l-5-5a1 1 0 010-1.414l5-5a1 1 0 011.414 0z">
+
+                            </path>
+                            </svg>
+                        </button> <!---->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <div id="hde-contact-container"
          style="visibility: visible; height: auto; width: auto; position: fixed; z-index: 999999999; letter-spacing: normal; user-select: none; right: 2%; bottom: 2%;">
