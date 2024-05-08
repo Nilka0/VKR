@@ -25,6 +25,22 @@ public class Exemplar {
         this.is_available = is_available;
     }
 
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
+    }
+
     public Exemplar() {
         super();
     }

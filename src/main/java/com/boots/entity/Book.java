@@ -1,6 +1,7 @@
 package com.boots.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "t_book")
@@ -13,7 +14,7 @@ public class Book {
     private String isbn;
     private String path;
 
-    @Column(length = 100000) // Указываем достаточно большую длину для base64-строки
+    @Size(max=1000000)
     private String imageBase64;
     @ManyToOne
     @JoinColumn(name = "author_id")

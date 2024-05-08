@@ -74,7 +74,7 @@
                 </a>
                 <!-- Всплывающее меню -->
                 <div class="dropdown-content">
-                    <a href="#"><span class="icon user-icon"></span>Имя пользователя</a>
+                    <a href="#" style="font-weight: bold"><span class="icon user-icon"></span>${user.first_name}</a>
                     <a href="#"><span class="icon settings-icon"></span>Настройки</a>
                     <a href="#"><span class="icon books-icon"></span>Мои книги</a>
                     <a href="#"><span class="icon orders-icon"></span>Мои заказы</a>
@@ -100,7 +100,7 @@
                     <h1 data-v-0175a2a0="" itemprop="" class="app-title app-title--mounted cart-page__title app-title--header-1 app-title--caps"><h1>
                         Корзина</h1>
                         <span class="app-title__append">
-      4 товара
+      Всего товаров: ${orders.size()}
     </span></h1></div>
                 <div class="button_second">
                     <div data-v-0175a2a0="" class="delete-many">
@@ -116,54 +116,38 @@
             <!---->
             <div data-v-0175a2a0="" class="cart-content">
                 <div data-v-0175a2a0="" class="cart-content--left">
-                    <!---->
-                    <!---->
                     <div data-v-0175a2a0="" class="products" style="">
                         <div data-v-0175a2a0="" class="products__items">
                             <div style="display: flex;flex-direction: row;justify-content: space-between;align-items: flex-start;margin-bottom: 32px;">
-                                <h3>В наличие</h3>
+                                <h3>В наличии</h3>
                                 <a href="/order"><button class="button_primary"> Заказать все книги</button></a>
                             </div>
+                            <c:forEach items="${orders}" var="book">
                             <div data-v-7889c1e6="" data-v-0175a2a0="" class="cart-item">
-                                <!---->
                                 <div data-v-7889c1e6="" class="cart-item__content">
-                                    <a data-v-7889c1e6="" href="/product/angliyskiy-yazyk-uchebnoe-posobie-dlya-raboty-s-videofilmom-igra-language-companion-to-the-film-the-game-2982974"
+                                    <a data-v-7889c1e6="" href="/book-details/${book.exemplar.book.id}"
                                        class="cart-item__content-picture" target="_blank">
-                                        <picture data-v-7889c1e6="" class="product-picture"><img alt="Английский язык. Учебное пособие для работы с видеофильмом &quot;Игра&quot;. Language Companion to the Film “The Game&quot;"
-                                                                                                 width="92" height="138" src="https://content.img-gorod.ru/nomenclature/29/829/2982974.jpg?width=92&amp;height=138&amp;fit=bounds"
-                                                                                                 data-src="https://content.img-gorod.ru/nomenclature/29/829/2982974.jpg?width=92&amp;height=138&amp;fit=bounds"
-                                                                                                 data-srcset="https://content.img-gorod.ru/nomenclature/29/829/2982974.jpg?width=184&amp;height=276&amp;fit=bounds 2x"
-                                                                                                 class="product-picture__img _loaded lazyloaded" srcset="https://content.img-gorod.ru/nomenclature/29/829/2982974.jpg?width=184&amp;height=276&amp;fit=bounds 2x"></picture>
+                                        <picture data-v-7889c1e6="" class="product-picture"><img src="data:image/png;base64,${book.exemplar.book.imageBase64}" alt="Картинка"></picture>
                                     </a>
                                     <div data-v-7889c1e6="" class="cart-item__content-right">
                                         <div data-v-7889c1e6="" class="cart-item__content-description">
-                                            <a data-v-7889c1e6="" href="/product/angliyskiy-yazyk-uchebnoe-posobie-dlya-raboty-s-videofilmom-igra-language-companion-to-the-film-the-game-2982974"
+                                            <a data-v-7889c1e6="" href="/book-details/${book.exemplar.book.id}"
                                                class="cart-item__content-title" target="_blank">
                                                 <div data-v-7889c1e6="" class="product-title">
                                                     <div class="product-title__head">
-                                                        Английский язык. Учебное пособие для работы с видеофильмом "Игра". Language Companion to the Film “The Game"
+                                                        ${book.exemplar.book.name}
                                                     </div>
                                                     <div class="product-title__author">
-                                                        Тигран Адамянц
+                                                            ${book.exemplar.book.author.fullName}
                                                     </div>
                                                 </div>
                                             </a>
-
-                                            <!---->
                                         </div>
-                                        <!---->
                                         <div data-v-7889c1e6="" class="cart-item__counter">
                                             <div data-v-7889c1e6="" class="cart-item__quantity">
-
-                                                <!---->
-                                                <div data-v-7889c1e6="" class="cart-item__counter-stock">
-                                                    В наличии 2 шт.
-                                                </div>
-
                                             </div>
                                         </div>
                                         <div data-v-7889c1e6="" class="cart-item__actions">
-                                            <!---->
                                             <button data-v-4c03a9b0="" data-v-7889c1e6="" class="button_second"
                                                     title="">
                                                 <svg style="width: 20px;height: 20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#f0513b" d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>
@@ -181,179 +165,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div data-v-7889c1e6="" data-v-0175a2a0="" class="cart-item">
-                                <!---->
-                                <div data-v-7889c1e6="" class="cart-item__content">
-                                    <a data-v-7889c1e6="" href="/product/knyazhna-na-prodazhu-kak-docherey-russkih-gosudarey-menyali-na-mir-i-novye-zemli-2957259"
-                                       class="cart-item__content-picture" target="_blank">
-                                        <picture data-v-7889c1e6="" class="product-picture"><img alt="Княжна на продажу: как дочерей русских государей меняли на мир и новые земли" width="92"
-                                                                                                 height="138" src="https://content.img-gorod.ru/nomenclature/29/572/2957259.jpg?width=92&amp;height=138&amp;fit=bounds"
-                                                                                                 data-src="https://content.img-gorod.ru/nomenclature/29/572/2957259.jpg?width=92&amp;height=138&amp;fit=bounds"
-                                                                                                 data-srcset="https://content.img-gorod.ru/nomenclature/29/572/2957259.jpg?width=184&amp;height=276&amp;fit=bounds 2x"
-                                                                                                 class="product-picture__img _loaded lazyloaded" srcset="https://content.img-gorod.ru/nomenclature/29/572/2957259.jpg?width=184&amp;height=276&amp;fit=bounds 2x"></picture>
-                                    </a>
-                                    <div data-v-7889c1e6="" class="cart-item__content-right">
-                                        <div data-v-7889c1e6="" class="cart-item__content-description">
-                                            <a data-v-7889c1e6="" href="/product/knyazhna-na-prodazhu-kak-docherey-russkih-gosudarey-menyali-na-mir-i-novye-zemli-2957259"
-                                               class="cart-item__content-title" target="_blank">
-                                                <div data-v-7889c1e6="" class="product-title">
-                                                    <div class="product-title__head">
-                                                        Княжна на продажу: как дочерей русских государей меняли на мир и новые земли
-                                                    </div>
-                                                    <div class="product-title__author">
-                                                        Ника Марш
-                                                    </div>
-                                                </div>
-                                            </a>
-
-                                            <!---->
-                                        </div>
-                                        <!---->
-                                        <div data-v-7889c1e6="" class="cart-item__counter">
-                                            <div data-v-7889c1e6="" class="cart-item__quantity">
-
-
-                                            </div>
-                                        </div>
-                                        <div data-v-7889c1e6="" class="cart-item__actions">
-                                            <!---->
-                                            <button data-v-4c03a9b0="" data-v-7889c1e6="" class="button_second"
-                                                    title="">
-                                                <svg style="width: 20px;height: 20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#f0513b" d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>
-                                            </button>
-                                            <button data-v-7889c1e6="" class="button_second_ser">
-                                                <svg data-v-7889c1e6="" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                                     class="cart-item__actions-icon">
-                                                    <path data-v-7889c1e6="" d="M17 19V8H7v11h10z" stroke="#606060" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    <path data-v-7889c1e6="" d="M6 8h12" stroke="#606060" stroke-width="1.5" stroke-linecap="round"></path>
-                                                    <path data-v-7889c1e6="" d="M10 8V7a2 2 0 012-2v0a2 2 0 012 2v1" stroke="#606060" stroke-width="1.5" stroke-linecap="round"
-                                                          stroke-linejoin="round"></path>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            </c:forEach>
                         </div>
-                        <div data-v-0175a2a0="" class="products__items">
-                            <div style="display: flex;flex-direction: column;margin-bottom: 32px;">
-                             <div style="display: flex;flex-direction: row;align-items: center;justify-content: space-between;margin-bottom: 4px">
-                                <h3>Нет в наличие</h3>
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                                    <label class="form-check-label" for="flexSwitchCheckDefault" style="font-size: 14px; ">Сообщить о наличии</label>
-                                </div>
-                             </div>
-                                <div data-v-0175a2a0="" style="font-size: 14px;">
-                                    Эти товары закончились. При оформлении заказа мы удалим их из корзины.
-                                </div>
-                            </div>
-                            </div>
-
-                            <div data-v-7889c1e6="" data-v-0175a2a0="" class="cart-item">
-                                <!---->
-                                <div data-v-7889c1e6="" class="cart-item__content">
-                                    <a data-v-7889c1e6="" href="/product/doch-tmy-3-2918693" class="cart-item__content-picture opacity" target="_blank">
-                                        <picture data-v-7889c1e6="" class="product-picture"><img alt="Дочь тьмы (#3)" width="92" height="138" src="https://content.img-gorod.ru/nomenclature/29/186/2918693.jpg?width=92&amp;height=138&amp;fit=bounds"
-                                                                                                 data-src="https://content.img-gorod.ru/nomenclature/29/186/2918693.jpg?width=92&amp;height=138&amp;fit=bounds"
-                                                                                                 data-srcset="https://content.img-gorod.ru/nomenclature/29/186/2918693.jpg?width=184&amp;height=276&amp;fit=bounds 2x"
-                                                                                                 class="product-picture__img _loaded lazyloaded" srcset="https://content.img-gorod.ru/nomenclature/29/186/2918693.jpg?width=184&amp;height=276&amp;fit=bounds 2x"></picture>
-                                    </a>
-                                    <div data-v-7889c1e6="" class="cart-item__content-right">
-                                        <div data-v-7889c1e6="" class="cart-item__content-description opacity">
-                                            <a data-v-7889c1e6="" href="/product/doch-tmy-3-2918693" class="cart-item__content-title" target="_blank">
-                                                <div data-v-7889c1e6="" class="product-title">
-                                                    <div class="product-title__head">
-                                                        Дочь тьмы (#3)
-                                                    </div>
-                                                    <div class="product-title__author">
-                                                        Лея Стоун
-                                                    </div>
-                                                </div>
-                                            </a>
-
-                                            <!---->
-                                        </div>
-                                        <div data-v-7889c1e6="" class="cart-item__available">
-                                            Нет в наличии
-                                        </div>
-                                        <!---->
-                                        <!---->
-                                        <div data-v-7889c1e6="" class="cart-item__actions">
-                                            <!---->
-                                            <button disabled data-v-4c03a9b0="" data-v-7889c1e6="" class="button_second"
-                                                    title="">
-                                                <svg style="width: 20px;height: 20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="#d1d1d1" d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
-                                                </svg>
-                                            </button>
-                                            <button data-v-7889c1e6="" class="button_second_ser">
-                                                <svg data-v-7889c1e6="" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                                     class="cart-item__actions-icon">
-                                                    <path data-v-7889c1e6="" d="M17 19V8H7v11h10z" stroke="#606060" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    <path data-v-7889c1e6="" d="M6 8h12" stroke="#606060" stroke-width="1.5" stroke-linecap="round"></path>
-                                                    <path data-v-7889c1e6="" d="M10 8V7a2 2 0 012-2v0a2 2 0 012 2v1" stroke="#606060" stroke-width="1.5" stroke-linecap="round"
-                                                          stroke-linejoin="round"></path>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-v-7889c1e6="" data-v-0175a2a0="" class="cart-item">
-                                <!---->
-                                <div data-v-7889c1e6="" class="cart-item__content">
-                                    <a data-v-7889c1e6="" href="/product/rentgenologiya-uchebnoe-posobie-2983803" class="cart-item__content-picture opacity"
-                                       target="_blank">
-                                        <picture data-v-7889c1e6="" class="product-picture"><img alt="Рентгенология. Учебное пособие" width="92" height="138" src="https://content.img-gorod.ru/nomenclature/29/838/2983803.jpg?width=92&amp;height=138&amp;fit=bounds"
-                                                                                                 data-src="https://content.img-gorod.ru/nomenclature/29/838/2983803.jpg?width=92&amp;height=138&amp;fit=bounds"
-                                                                                                 data-srcset="https://content.img-gorod.ru/nomenclature/29/838/2983803.jpg?width=184&amp;height=276&amp;fit=bounds 2x"
-                                                                                                 class="product-picture__img _loaded lazyloaded" srcset="https://content.img-gorod.ru/nomenclature/29/838/2983803.jpg?width=184&amp;height=276&amp;fit=bounds 2x"></picture>
-                                    </a>
-                                    <div data-v-7889c1e6="" class="cart-item__content-right">
-                                        <div data-v-7889c1e6="" class="cart-item__content-description opacity">
-                                            <a data-v-7889c1e6="" href="/product/rentgenologiya-uchebnoe-posobie-2983803" class="cart-item__content-title"
-                                               target="_blank">
-                                                <div data-v-7889c1e6="" class="product-title">
-                                                    <div class="product-title__head">
-                                                        Рентгенология. Учебное пособие
-                                                    </div>
-                                                    <div class="product-title__author">
-                                                        Виктор Трутень
-                                                    </div>
-                                                </div>
-                                            </a>
-
-                                            <!---->
-                                        </div>
-                                        <div data-v-7889c1e6="" class="cart-item__available">
-                                            Нет в наличии
-                                        </div>
-                                        <!---->
-                                        <!---->
-                                        <div data-v-7889c1e6="" class="cart-item__actions">
-                                            <!---->
-                                            <button disabled data-v-4c03a9b0="" data-v-7889c1e6="" class="button_second">
-                                            <svg style="width: 20px;height: 20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="#d1d1d1" d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
-                                            </svg>
-                                            </button>
-                                            <button data-v-7889c1e6="" class="button_second_ser" >
-                                                <svg data-v-7889c1e6="" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                                     class="cart-item__actions-icon">
-                                                    <path data-v-7889c1e6="" d="M17 19V8H7v11h10z" stroke="#606060" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    <path data-v-7889c1e6="" d="M6 8h12" stroke="#606060" stroke-width="1.5" stroke-linecap="round"></path>
-                                                    <path data-v-7889c1e6="" d="M10 8V7a2 2 0 012-2v0a2 2 0 012 2v1" stroke="#606060" stroke-width="1.5" stroke-linecap="round"
-                                                          stroke-linejoin="round"></path>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!---->
-                        <!---->
-                    </div>
-                </div>
 
 
 

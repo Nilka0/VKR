@@ -77,7 +77,7 @@
                 </a>
                 <!-- Всплывающее меню -->
                 <div class="dropdown-content">
-                    <a href="#"><span class="icon user-icon"></span>Имя пользователя</a>
+                    <a href="#" style="font-weight: bold"><span class="icon user-icon"></span>${user.first_name}</a>
                     <a href="#"><span class="icon settings-icon"></span>Настройки</a>
                     <a href="#"><span class="icon books-icon"></span>Мои книги</a>
                     <a href="#"><span class="icon orders-icon"></span>Мои заказы</a>
@@ -102,40 +102,37 @@
            </div>
 
            <form method="POST" action="/login">
-                    <input class="login-form-input" type="text" name="username" placeholder="Номер студ.билета" required autofocus="true" style="min-width: 300px;">
-                    <input class="login-form-input" type="text" name="first-name" placeholder="Имя" required autofocus="true" style="min-width: 300px;">
-                    <input class="login-form-input" type="text" name="last-name" placeholder="Фамилия" required autofocus="true" style="min-width: 300px;">
-                    <input class="login-form-input" type="text" name="patronymic" placeholder="Отчество" required autofocus="true" style="min-width: 300px;">
-                    <input class="login-form-input"  type="tel" name="phone" placeholder="Номер телефона" style="min-width: 300px;" >
+                    <input class="login-form-input" type="text" name="username" placeholder="${user.username}" required autofocus="true" style="min-width: 300px;">
+                    <input class="login-form-input" style="min-width: 300px;" type="tel" name="phone" placeholder=
+                    <c:if test="${user.phoneNumber eq ''}">
+                        "Номер телефона"
+                    </c:if>
+                        "${user.phoneNumber}">
            </form>
-                <button class="btn" type="submit" style="  width: 100%; border-radius: 12px">
-                    Оформить
-                </button>
+           <form method="POST" action="/checkout" style="width: 100%;">
+               <button class="btn" type="submit" style="width: 100%; border-radius: 12px">Оформить</button>
+           </form>
        </div>
-        <div class="form-img" style="display: flex;flex-direction: column; background-color: #fafafa">
+        <div class="form-img" style="display: flex;flex-direction: column; background-color: #fafafa;align-items:flex-start;">
           <div data-v-0175a2a0="" class="products__items">
-
+              <c:forEach items="${orders}" var="book">
             <div data-v-7889c1e6="" data-v-0175a2a0="" class="cart-item" style="padding-bottom: 20px;border-bottom: 0; margin-bottom: 0px;">
                 <!---->
                 <div data-v-7889c1e6="" class="cart-item__content">
                     <a data-v-7889c1e6="" href="/product/angliyskiy-yazyk-uchebnoe-posobie-dlya-raboty-s-videofilmom-igra-language-companion-to-the-film-the-game-2982974"
                        class="cart-item__content-picture" target="_blank" style="width: 80px; height: 135px">
-                        <picture data-v-7889c1e6="" class="product-picture"><img style="border-radius: 12px" alt="Английский язык. Учебное пособие для работы с видеофильмом &quot;Игра&quot;. Language Companion to the Film “The Game&quot;"
-                                                                                 width="92" height="138" src="https://content.img-gorod.ru/nomenclature/29/829/2982974.jpg?width=92&amp;height=138&amp;fit=bounds"
-                                                                                 data-src="https://content.img-gorod.ru/nomenclature/29/829/2982974.jpg?width=92&amp;height=138&amp;fit=bounds"
-                                                                                 data-srcset="https://content.img-gorod.ru/nomenclature/29/829/2982974.jpg?width=184&amp;height=276&amp;fit=bounds 2x"
-                                                                                 class="product-picture__img _loaded lazyloaded" srcset="https://content.img-gorod.ru/nomenclature/29/829/2982974.jpg?width=184&amp;height=276&amp;fit=bounds 2x"></picture>
+                        <picture data-v-7889c1e6="" class="product-picture"><img src="data:image/png;base64,${book.exemplar.book.imageBase64}" alt="Картинка"></picture>
                     </a>
-                    <div data-v-7889c1e6="" class="cart-item__content-right">
+                    <div data-v-7889c1e6="" class="cart-item__content-right" style="flex-direction: column;">
                         <div data-v-7889c1e6="" class="cart-item__content-description">
                             <a data-v-7889c1e6="" href="/product/angliyskiy-yazyk-uchebnoe-posobie-dlya-raboty-s-videofilmom-igra-language-companion-to-the-film-the-game-2982974"
                                class="cart-item__content-title" target="_blank">
                                 <div data-v-7889c1e6="" class="product-title">
                                     <div class="product-title__head" style="font-size: 14px">
-                                        Английский язык. Учебное пособие для работы с видеофильмом "Игра". Language Companion to the Film “The Game"
+                                        ${book.exemplar.book.name}
                                     </div>
                                     <div class="product-title__author">
-                                        Тигран Адамянц
+                                        ${book.exemplar.book.author.fullName}
                                     </div>
                                 </div>
                             </a>
@@ -159,49 +156,7 @@
                     </div>
                 </div>
             </div>
-            <div data-v-7889c1e6="" data-v-0175a2a0="" class="cart-item" style=" padding-bottom: 24px;border-bottom: 0; margin-bottom: 0px;">
-                <!---->
-                <div data-v-7889c1e6="" class="cart-item__content">
-                    <a data-v-7889c1e6="" href="/product/knyazhna-na-prodazhu-kak-docherey-russkih-gosudarey-menyali-na-mir-i-novye-zemli-2957259"
-                       class="cart-item__content-picture" target="_blank" style="width: 80px; height: 135px">
-                        <picture data-v-7889c1e6="" class="product-picture" ><img style="border-radius: 12px" alt="Княжна на продажу: как дочерей русских государей меняли на мир и новые земли" width="92"
-                                                                                 height="138" src="https://content.img-gorod.ru/nomenclature/29/572/2957259.jpg?width=92&amp;height=138&amp;fit=bounds"
-                                                                                 data-src="https://content.img-gorod.ru/nomenclature/29/572/2957259.jpg?width=92&amp;height=138&amp;fit=bounds"
-                                                                                 data-srcset="https://content.img-gorod.ru/nomenclature/29/572/2957259.jpg?width=184&amp;height=276&amp;fit=bounds 2x"
-                                                                                 class="product-picture__img _loaded lazyloaded" srcset="https://content.img-gorod.ru/nomenclature/29/572/2957259.jpg?width=184&amp;height=276&amp;fit=bounds 2x"></picture>
-                    </a>
-                    <div data-v-7889c1e6="" class="cart-item__content-right">
-                        <div data-v-7889c1e6="" class="cart-item__content-description">
-                            <a data-v-7889c1e6="" href="/product/knyazhna-na-prodazhu-kak-docherey-russkih-gosudarey-menyali-na-mir-i-novye-zemli-2957259"
-                               class="cart-item__content-title" target="_blank">
-                                <div data-v-7889c1e6="" class="product-title">
-                                    <div class="product-title__head" style="font-size: 14px">
-                                        Княжна на продажу: как дочерей русских государей меняли на мир и новые земли
-                                    </div>
-                                    <div class="product-title__author">
-                                        Ника Марш
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!---->
-                        </div>
-                        <!---->
-                        <div data-v-7889c1e6="" class="cart-item__actions">
-
-                            <button data-v-7889c1e6="" class="button_second_ser">
-                                <svg data-v-7889c1e6="" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                     class="cart-item__actions-icon">
-                                    <path data-v-7889c1e6="" d="M17 19V8H7v11h10z" stroke="#606060" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path data-v-7889c1e6="" d="M6 8h12" stroke="#606060" stroke-width="1.5" stroke-linecap="round"></path>
-                                    <path data-v-7889c1e6="" d="M10 8V7a2 2 0 012-2v0a2 2 0 012 2v1" stroke="#606060" stroke-width="1.5" stroke-linecap="round"
-                                          stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+              </c:forEach>
           </div>
           <div id="map">
             <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/org/nauchno_tekhnicheskaya_biblioteka_mgtu_stankin/82407811310/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Научно-техническая библиотека МГТУ Станкин</a><a href="https://yandex.ru/maps/213/moscow/category/library/184105838/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Библиотека в Москве</a><a href="https://yandex.ru/maps/213/moscow/category/university/184106140/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">ВУЗ в Москве</a><iframe src="https://yandex.ru/map-widget/v1/?ll=37.597459%2C55.791319&mode=search&oid=82407811310&ol=biz&z=16.11" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>

@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -75,7 +76,7 @@
                 </a>
             <!-- Всплывающее меню -->
                 <div class="dropdown-content">
-                    <a href="#"><span class="icon user-icon"></span>Имя пользователя</a>
+                    <a href="#" style="font-weight: bold"><span class="icon user-icon"></span>${user.first_name}</a>
                     <a href="#"><span class="icon settings-icon"></span>Настройки</a>
                     <a href="#"><span class="icon books-icon"></span>Мои книги</a>
                     <a href="#"><span class="icon orders-icon"></span>Мои заказы</a>
@@ -90,30 +91,30 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/all">Главная</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Допуски и посадки в приборостроении</li>
+            <li class="breadcrumb-item active" aria-current="page">${book.name}</li>
         </ol>
     </nav>
 <div style="display: flex; gap: 100px;flex-direction: column ">
     <div class="BookCard_book__1IAPE">
         <div class="detail-product__gallery">
             <picture class="product-info-gallery__poster">
-                <img class="img_book_obl" src="<c:url value='/img/oblojka.jpg'/>" alt="обложка">
+                <img src="data:image/png;base64,${book.imageBase64}" alt="Картинка">
             </picture>
 
             <div class="gallery-thumbs product-info-gallery__thumbnails">
                 <button type="button" aria-label="Смотреть фотографию №0" class="gallery-thumbs__item"><!---->
                     <picture class="gallery-thumbs__picture" >
-                        <img src="<c:url value='/img/oblojka.jpg'/>" style="height: 32px; width: 22px;">
+                        <img src="data:image/png;base64,${book.imageBase64}" alt="Картинка">
                     </picture>
                 </button>
                 <button type="button" aria-label="Смотреть фотографию №1" class="gallery-thumbs__item"><!---->
                     <picture class="gallery-thumbs__picture" >
-                        <img src="<c:url value='/img/oblojka.jpg'/>" style="height: 32px; width: 22px;">
+                        <img src="data:image/png;base64,${book.imageBase64}" alt="Картинка">
                     </picture>
                 </button>
                 <button type="button" aria-label="Смотреть фотографию №2" class="gallery-thumbs__item"><!---->
                     <picture class="gallery-thumbs__picture" >
-                        <img src="<c:url value='/img/oblojka.jpg'/>" style="height: 32px; width: 22px;" >
+                        <img src="data:image/png;base64,${book.imageBase64}" alt="Картинка">
                     </picture>
                 </button>
                 <button aria-label="Смотреть другие фотографии" class="gallery-thumbs__item gallery-thumbs__item--more"> +2
@@ -122,15 +123,15 @@
         </div>
         <div class="BookCard_book__content__7J8Fc" >
             <div class="BookLabel_container__f3jDW">
-                <span class="badge badge">Машиностроение</span>
-                <span class="badge badge">Обучение</span>
-                <span class="badge badge">Саморазвитие</span>
+                <c:forEach items="${tags}" var="tag">
+                    <span class="badge badge">${tag.tagName}</span>
+                </c:forEach>
             </div>
-            <div><h1 itemprop="name" class="BookCard_book__mainInfo__title___nFS4">Допуски и посадки в приборостроении</h1></div>
+            <div><h1 itemprop="name" class="BookCard_book__mainInfo__title___nFS4">${book.name}</h1></div>
             <div style="display: flex; gap: 40px;flex-direction: column;">
               <div class="info_card">
                 <div class="rait_avt">
-                    <div class="text" style="color:#878A8F;">Смирнов А.С.</div>
+                    <div class="text" style="color:#878A8F;">${book.author.fullName}</div>
                     <div class="star-rating-active">
                         <div class="star-rating__items active_${book.rate}">
                             <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
@@ -180,8 +181,16 @@
                 <div class="rait_avt">
                     <div class="electr_nal">
                         <div class="chg-app-button__content">
-          <span class="product-description-short__btn-content">В наличие в библиотеке<img src="<c:url value='/img/not.svg'/>" width="12" height="12" viewBox="0 0 14 14" class="product-description-short__btn-content-svg"><path d="M19 4.999V4a1 1 0 00-1.447-.894L12 5.883 6.447 3.107A1 1 0 005 4v1H4a2 2 0 00-2 2v11a2 2 0 002 2h16a2 2 0 002-2V7a2 2 0 00-2-2h-1zm-4 13l3.447-1.724a1 1 0 00.553-.894V6.999h1v11h-5zm-10-11v8.382a1 1 0 00.553.894L9 18H4V7h1zm2-1.764l4 2v9.528l-4-2V5.235zm6 11.528V7.235l4-2v9.528l-4 2z"></path></svg>
-          </span>
+                            <span  class="product-description-short__btn-content">Наличие в библиотеке
+                            <c:choose>
+                                <c:when test="${isAvailable}">
+                                    <img  src="<c:url value='/img/Vector ok.svg'/>" width="12" height="12" viewBox="0 0 14 14" class="product-description-short__btn-content-svg" alt=""><path d="M19 4.999V4a1 1 0 00-1.447-.894L12 5.883 6.447 3.107A1 1 0 005 4v1H4a2 2 0 00-2 2v11a2 2 0 002 2h16a2 2 0 002-2V7a2 2 0 00-2-2h-1zm-4 13l3.447-1.724a1 1 0 00.553-.894V6.999h1v11h-5zm-10-11v8.382a1 1 0 00.553.894L9 18H4V7h1zm2-1.764l4 2v9.528l-4-2V5.235zm6 11.528V7.235l4-2v9.528l-4 2z"></path>
+                                </c:when>
+                                <c:otherwise>
+                                    <img  src="<c:url value='/img/not.svg'/>" width="12" height="12" viewBox="0 0 14 14" class="product-description-short__btn-content-svg" alt=""><path d="M19 4.999V4a1 1 0 00-1.447-.894L12 5.883 6.447 3.107A1 1 0 005 4v1H4a2 2 0 00-2 2v11a2 2 0 002 2h16a2 2 0 002-2V7a2 2 0 00-2-2h-1zm-4 13l3.447-1.724a1 1 0 00.553-.894V6.999h1v11h-5zm-10-11v8.382a1 1 0 00.553.894L9 18H4V7h1zm2-1.764l4 2v9.528l-4-2V5.235zm6 11.528V7.235l4-2v9.528l-4 2z"></path>
+                                </c:otherwise>
+                            </c:choose>
+                                </span>
                         </div>
                         <div class="chg-app-button__content">
             <span class="product-description-short__btn-content">Электронная версия<img src="<c:url value='/img/Vector ok.svg'/>" width="12" height="12" viewBox="0 0 14 14" class="product-description-short__btn-content-svg"><path d="M19 4.999V4a1 1 0 00-1.447-.894L12 5.883 6.447 3.107A1 1 0 005 4v1H4a2 2 0 00-2 2v11a2 2 0 002 2h16a2 2 0 002-2V7a2 2 0 00-2-2h-1zm-4 13l3.447-1.724a1 1 0 00.553-.894V6.999h1v11h-5zm-10-11v8.382a1 1 0 00.553.894L9 18H4V7h1zm2-1.764l4 2v9.528l-4-2V5.235zm6 11.528V7.235l4-2v9.528l-4 2z"></path></svg>
@@ -189,7 +198,11 @@
                         </div>
                     </div>
                     <div class="btn_detail">
-                        <button class="button_primary">В корзину</button>
+                        <form method="POST" action="/add-to-order">
+                            <input type="hidden" name="bookId" value="${book.id}">
+                            <button type="submit" class="button_primary">В корзину</button>
+                        </form>
+
                         <button class="button_second">Читать</button>
                         <button class="button_second" ><svg width="20" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10.1338 17C9.90309 17 9.67984 16.971 9.49379 16.9057C6.651 15.9554 2.13379 12.5824 2.13379 7.59896C2.13379 5.0601 4.23984 3 6.8296 3C8.08728 3 9.26309 3.47876 10.1338 4.33472C11.0045 3.47876 12.1803 3 13.438 3C16.0277 3 18.1338 5.06736 18.1338 7.59896C18.1338 12.5896 13.6166 15.9554 10.7738 16.9057C10.5877 16.971 10.3645 17 10.1338 17ZM6.8296 4.08808C4.85751 4.08808 3.25007 5.66218 3.25007 7.59896C3.25007 12.5534 8.13937 15.3098 9.85844 15.8829C9.99239 15.9264 10.2826 15.9264 10.4166 15.8829C12.1282 15.3098 17.025 12.5606 17.025 7.59896C17.025 5.66218 15.4175 4.08808 13.4454 4.08808C12.3143 4.08808 11.265 4.60311 10.5877 5.49534C10.3794 5.77098 9.90309 5.77098 9.69472 5.49534C9.00263 4.59585 7.96077 4.08808 6.8296 4.08808Z" fill="#EE3217"/>
@@ -201,15 +214,14 @@
               <div class="info_book_all">
                 <div class="info_book">
                     <h4>Описание</h4>
-                    В книге рассмотрены вопросы, связанные с простановкой размеров на чертежах и выбором полей допусков в приборостроении. Рассмотрены новые, принятые в приборостроении методы расчета допусков на отливки, на детали из пластмасс, введена дополнительная глава о предпочтительных числах как основе современного конструирования и выбора линейных размеров.
+                    ${book.path}
                 </div>
                 <div class="info_book">
                     <h4>Характеристики</h4>
-                    Автор: Смирнов А.С.
+                    Авторы: ${book.author.fullName}
                     <p style="margin-bottom: 0rem;">Год: 1968</p>
-                    <p style="margin-bottom: 0rem;">Количество страниц: 232 с.</p>
-                    <p style="margin-bottom: 0rem;">ISBN: 978-5-17-159739-9</p>
-                    <p style="margin-bottom: 0rem;">Возрастные ограничения: 16+</p>
+                    <p style="margin-bottom: 0rem;">Количество страниц: ${book.pageQuantity} с.</p>
+                    <p style="margin-bottom: 0rem;">ISBN: ${book.isbn}</p>
                 </div>
             </div>
            </div>
@@ -222,7 +234,7 @@
         </div>
         <div class="books">
 
-            <c:forEach var="book" items="${books}">
+            <c:forEach var="book" items="${relatedBooks}">
                 <c:set var="base64Image" value="${book.imageBase64}"/>
                 <div class="embla__container" style="display: flex; width: 180px; height: 450px; flex-direction: column;">
                     <div class="slider__item">
@@ -236,8 +248,9 @@
                            class="product-card__title">
                             <div class="product-title">
                                 <div class="BookLabel_container__f3jDW" style="margin-top: 20px">
-                                    <span class="badge badge">Машиностроение</span>
-                                    <span class="badge badge">+2</span>
+                                    <c:forEach var="tagName" items="${bookTagsMap[book.id]}">
+                                        <span class="badge badge">${tagName}</span>
+                                    </c:forEach>
                                 </div>
                                 <div class="product-title__head">
                                         ${book.name}
@@ -346,9 +359,9 @@
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous">
+</script>
 <script>
-    // JavaScript для отображения всплывающего меню при наведении на кнопку "Профиль"
     document.addEventListener("DOMContentLoaded", function() {
         var profileButton = document.querySelector('.profile-button');
         var profileMenu = document.querySelector('.profile-menu');
@@ -360,8 +373,6 @@
         profileButton.addEventListener('mouseout', function() {
             profileMenu.style.display = 'none';
         });
-
-        // Добавьте обработчик события для предотвращения скрытия меню при клике на его содержимое
         profileMenu.addEventListener('click', function(event) {
             event.stopPropagation();
         });
