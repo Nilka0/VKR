@@ -39,13 +39,12 @@ public class BookController {
 
     @GetMapping("/all")
     public String getAllBooksAndEvents(Model model, Principal principal) {
-        // Получаем текущего пользователя
+
         User user = userService.findByUsername(principal.getName());
 
-        // Получаем заказы пользователя
         List<Order> orders = orderService.getOrdersByUserId(user.getId());
         List<Book> books = bookService.getAllBooks();
-        // Извлекаем теги книг из заказов пользователя
+
         Map<Long, List<String>> bookTagsMap = new HashMap<>();
         for (Book book : books) {
             Long bookId = book.getId();
@@ -54,8 +53,6 @@ public class BookController {
             bookTagsMap.put(bookId, tagNames);
         }
 
-        // Получаем все книги и события
-// Извлекаем теги книг из заказов пользователя
         List<String> tagNames = new ArrayList<>();
         for (Order order : orders) {
             List<Tag> tags = tagService.getTagsByBookId(order.getExemplar().getBook().getId());
@@ -64,11 +61,9 @@ public class BookController {
             }
         }
 
-        // Ищем книги с тегами, которые уже имеются у пользователя
         List<Book> relatedBooks = tagService.getBooksByTags(tagNames);
         List<Event> events = eventService.getAllEvents();
 
-        // Передаем данные в модель
         model.addAttribute("books", books);
         model.addAttribute("user", user);
         model.addAttribute("events", events);
@@ -138,18 +133,13 @@ public class BookController {
     }
     @PostMapping("/checkout")
     public String checkout(Model model, Principal principal) {
-        // Получаем текущего пользователя
+
         User user = userService.findByUsername(principal.getName());
 
-        // Получаем все заказы пользователя
         List<Order> orders = orderService.getOrdersByUserId(user.getId());
 
-        // Сохраняем заказы в резерве
         reserveService.saveOrdersInReserve(orders);
 
-        // Очищаем корзину пользователя или выполняем другие действия при оформлении заказа
-
-        // Перенаправляем пользователя на страницу успешного оформления заказа или другую страницу
         return "redirect:/all";
     }
 

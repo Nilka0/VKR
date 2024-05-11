@@ -1061,6 +1061,35 @@ button:hover {
     display: flex;
     gap: 24px;
     flex-direction: column;}
+.block_tags {
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+}
+.tags{
+    display: flex;
+    width: 100px;
+    height: 100px;
+    padding: 20px 14px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 70px;
+    background: #FFF;
+    box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+.tags:hover{
+    background: #F0513B;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.tags.active{
+    background: #F0513B;
+    color: #FFFFFF;
+}
 .info_book{
     display: flex;
     gap: 12px;

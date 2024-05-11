@@ -181,6 +181,7 @@
     </div>
     <!---->
     </div>
+
     <div id="hde-contact-container"
          style="visibility: visible; height: auto; width: auto; position: fixed; z-index: 999999999; letter-spacing: normal; user-select: none; right: 2%; bottom: 2%;">
         <div id="hde-contact-container-size" style="font-size: 24px;">
