@@ -36,4 +36,18 @@ public class TagService {
         // Преобразуем множество обратно в список и возвращаем его
         return new ArrayList<>(uniqueBooks);
     }
+    public List<Tag> getTags() {
+        List<Tag> tagList = tagRepository.findAll();
+        Set<String> uniqueTagNames = new HashSet<>();
+        List<Tag> uniqueTags = new ArrayList<>();
+
+        for (Tag tag : tagList) {
+            String tagName = tag.getTagName();
+            if (!uniqueTagNames.contains(tagName)) {
+                uniqueTagNames.add(tagName);
+                uniqueTags.add(tag);
+            }
+        }
+        return uniqueTags;
+    }
 }

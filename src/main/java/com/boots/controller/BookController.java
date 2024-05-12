@@ -44,7 +44,8 @@ public class BookController {
 
         List<Order> orders = orderService.getOrdersByUserId(user.getId());
         List<Book> books = bookService.getAllBooks();
-
+        List<Tag> allTags = new ArrayList<>();
+        allTags = tagService.getTags();
         Map<Long, List<String>> bookTagsMap = new HashMap<>();
         for (Book book : books) {
             Long bookId = book.getId();
@@ -65,6 +66,7 @@ public class BookController {
         List<Event> events = eventService.getAllEvents();
 
         model.addAttribute("books", books);
+        model.addAttribute("tags", allTags);
         model.addAttribute("user", user);
         model.addAttribute("events", events);
         model.addAttribute("bookTagsMap", bookTagsMap);

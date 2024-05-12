@@ -268,47 +268,17 @@
             </div>
             Выберите теги, которые вас больше всего интересуют:
         </div>
-        <div style="display: flex;overflow: auto; align-items: center;align-content: center;gap: 8px 8px;padding-bottom: 24px;padding-top: 20px">
-            <div class="tags">
-                <div style="-webkit-line-clamp: 3; -webkit-box-orient: vertical;display: -webkit-box;font-size: 14px;text-align: center;overflow: hidden;text-overflow: ellipsis;word-break: break-word;">
-                    Машиностроение
+        <div style="display: flex;flex-direction: column;">
+            <div style="display: flex;overflow: auto; align-items: center;align-content: center;gap: 8px 8px;padding: 20px 10px 16px 10px">
+                <c:forEach var="tag" items="${tags}">
+                <div class="tags">
+                    <div style="-webkit-line-clamp: 3; -webkit-box-orient: vertical;display: -webkit-box;font-size: 14px;text-align: center;overflow: hidden;text-overflow: ellipsis;word-break: break-word;">
+                        ${tag.tagName}
+                    </div>
                 </div>
+                </c:forEach>
             </div>
-            <div class="tags">
-                <div style="-webkit-line-clamp: 3; -webkit-box-orient: vertical;display: -webkit-box;font-size: 14px;text-align: center;overflow: hidden;text-overflow: ellipsis;word-break: break-word;">
-                    Машиностроение
-                </div>
-            </div>
-            <div class="tags">
-                <div style="-webkit-line-clamp: 3; -webkit-box-orient: vertical;display: -webkit-box;font-size: 14px;text-align: center;overflow: hidden;text-overflow: ellipsis;word-break: break-word;">
-                    Машиностроение
-                </div>
-            </div>
-            <div class="tags">
-                <div style="-webkit-line-clamp: 3; -webkit-box-orient: vertical;display: -webkit-box;font-size: 14px;text-align: center;overflow: hidden;text-overflow: ellipsis;word-break: break-word;">
-                    Машиностроение
-                </div>
-            </div>
-            <div class="tags">
-                <div style="-webkit-line-clamp: 3; -webkit-box-orient: vertical;display: -webkit-box;font-size: 14px;text-align: center;overflow: hidden;text-overflow: ellipsis;word-break: break-word;">
-                    Машиностроение
-                </div>
-            </div>
-            <div class="tags">
-                <div style="-webkit-line-clamp: 3; -webkit-box-orient: vertical;display: -webkit-box;font-size: 14px;text-align: center;overflow: hidden;text-overflow: ellipsis;word-break: break-word;">
-                    Машиностроение
-                </div>
-            </div>
-            <div class="tags">
-                <div style="-webkit-line-clamp: 3; -webkit-box-orient: vertical;display: -webkit-box;font-size: 14px;text-align: center;overflow: hidden;text-overflow: ellipsis;word-break: break-word;">
-                    Машиностроение
-                </div>
-            </div>
-            <div class="tags">
-                <div style="-webkit-line-clamp: 3; -webkit-box-orient: vertical;display: -webkit-box;font-size: 14px;text-align: center;overflow: hidden;text-overflow: ellipsis;word-break: break-word;">
-                    Машиностроение
-                </div>
-            </div>
+            <button class="button_primary" style="width: 20%; border-radius: 10px; margin-top: 20px">Сохранить выбор</button>
         </div>
 
     </div>
